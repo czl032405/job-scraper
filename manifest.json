@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "job-scrape",
+  "version": "0.0.1",
+  "description": "job-scrape",
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_title": "job-scrape"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.51job.com/*", "https://*.zhipin.com/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "permissions": [
+    "cookies",
+    "storage",
+    "tabs",
+    "https://*.51job.cn/*",
+    "https://*.zhipin.com/*"
+  ],
+  "web_accessible_resources": ["inject.js"]
+}
